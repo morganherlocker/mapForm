@@ -1,9 +1,54 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel="stylesheet", type="text/css", href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/esri/css/esri.css")
-    script(type='text/javascript', src='http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.1')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js')
+		script(src='/js/bootstrap.min.js')
+		link(rel='stylesheet', href='/css/style.css')
+		link(rel="stylesheet", type="text/css", href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/esri/css/esri.css")
+		script(type='text/javascript', src='http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.1')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+	
+	body
+		div.navbar.navbar-fixed-top
+			div.navbar-inner
+				div.container
+					button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand(href='/') map form
+					div.nav-collapse
+						ul.nav
+							li
+								a(href='/') 
+									i.icon-home.icon-white
+									span  home
+							li 
+								a(href='/')
+									i.icon-question-sign.icon-white									
+									span  help
+		block content
+		
+		div.navbar.navbar-fixed-bottom
+			div.navbar-inner
+				div.container
+					ul.nav
+						li
+							a(href='/') 
+								i.icon-plus-sign.icon-white
+								span  add
+						li 
+							a(href='/') 
+								i.icon-pencil.icon-white
+								span  edit
+						li 
+							a(href='/') 
+								i.icon-minus-sign.icon-white
+								span  delete
+						li 
+							a(href='/') 
+								i.icon-globe.icon-white
+								span  layers
