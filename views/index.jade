@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  script
+    dojo.require("esri.map");
+    function init() {
+      map = new esri.Map("mapDiv");
+
+      var basemapURL= "http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
+      var basemap = new esri.layers.ArcGISTiledMapServiceLayer(basemapURL);
+      map.addLayer(basemap);}
+      dojo.addOnLoad(init);
+      dojo.connect(window,'resize',map,map.resize);
+  
+  div.mapDiv(id='mapDiv')
+
+
+  
